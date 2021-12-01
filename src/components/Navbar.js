@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-// import logo192 from "../images/logo192.png";
-
 const Navbar = () => {
   return (
     <Wrapper>
@@ -12,7 +10,6 @@ const Navbar = () => {
         <div className="logo">
           <h2>
             Kamil Łach
-            {/* <img src={logo192} alt="logo" /> */}
             <div className="logoLine"></div>
             <span>Fotograf</span>{" "}
           </h2>
@@ -63,17 +60,7 @@ const Wrapper = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        /* margin-left: -30px; */
-        /* img {
-          width: 30px;
-          margin: 0 20px;
-          animation: imgR 2s linear infinite alternate;
-          @keyframes imgR {
-            100% {
-              transform: scale(1.5);
-            }
-          }
-        } */
+        margin-left: -1.5rem;
         .logoLine {
           margin: 5px 30px 0;
           height: 1.5rem;

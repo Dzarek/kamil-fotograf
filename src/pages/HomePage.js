@@ -15,9 +15,21 @@ import {
   IoIosArrowDroprightCircle,
 } from "react-icons/io";
 
+import { FaFacebookSquare, FaInstagramSquare } from "react-icons/fa";
+
 const HomePage = () => {
   return (
     <Wrapper>
+      <div className="fbAndInst">
+        <div>
+          <FaFacebookSquare className="fbInIcon" />
+          <p>facebook</p>
+        </div>
+        <div>
+          <FaInstagramSquare className="fbInIcon" />
+          <p>instagram</p>
+        </div>
+      </div>
       <div className="headerImages">
         <Carousel
           // className="headerImages"
@@ -102,6 +114,31 @@ const Wrapper = styled.div`
   position: relative;
   width: 100vw;
   height: 100vh;
+  .fbAndInst {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) rotate(-90deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5vw;
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin: 0 2rem;
+      font-family: "Kanit", sans-serif;
+      cursor: pointer;
+      p {
+        margin: 0 10px;
+        font-size: 1rem;
+      }
+      .fbInIcon {
+        color: var(--secondaryColor);
+      }
+    }
+  }
   .headerImages {
     position: relative;
     top: 50%;
