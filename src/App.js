@@ -1,12 +1,12 @@
 import "./App.css";
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import { useState } from "react";
+import { MdDarkMode, MdLightMode } from "react-icons/md";
+import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
-
-import { MdDarkMode, MdLightMode } from "react-icons/md";
-import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
+import GalleryPage from "./pages/GalleryPage";
 
 function App() {
   const [lightMode, setLightMode] = useState(false);
@@ -31,9 +31,12 @@ function App() {
           </button>
         )}
         <Navbar />
-        <Routes>
-          <Route path="/" element={<HomePage />}></Route>
-        </Routes>
+        {/* <Routes> */}
+        {/* <Route path="/" element={<HomePage />}></Route>
+          <Route path="/gallery" element={<HomePage />}></Route> */}
+        {/* </Routes> */}
+        <HomePage />
+        <GalleryPage />
       </Router>
     </div>
   );

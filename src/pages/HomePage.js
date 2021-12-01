@@ -218,6 +218,11 @@ const Wrapper = styled.div`
         padding: 5px 0;
         text-align: center;
         background: whitesmoke;
+        transition: 0.4s;
+        :hover {
+          background: var(--secondaryColor);
+          color: var(--primaryColor);
+        }
       }
     }
     .infoLine {

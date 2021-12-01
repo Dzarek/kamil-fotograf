@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const Navbar = () => {
+  const [offset, setOffset] = useState(0);
+
+  useEffect(() => {
+    window.onscroll = () => {
+      setOffset(window.pageYOffset);
+    };
+  }, []);
+
   return (
     <Wrapper>
-      <div className="navbar">
-        <h5>Oferta</h5>
+      <div className={offset === 0 ? "navbar" : "navbar navbarBg"}>
         <h5>Galeria</h5>
+        <h5>Oferta</h5>
         <div className="logo">
           <h2>
             Kamil Łach
@@ -115,6 +123,10 @@ const Wrapper = styled.div`
         }
       }
     }
+  }
+  .navbarBg {
+    background: var(--navbarBgColor);
+    transition: 0.5s;
   }
 `;
 

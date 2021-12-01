@@ -15,32 +15,36 @@ html {
 }
 
 :root {
-  --primaryColor: #ddd;
-  --primaryColor2: #222;
-  --secondaryColor: #905503;
   --secondaryColor: #4f7e52;
-
 }
 
 
 .app {
+  --primaryColor: #ddd;
+  --appBgColor: rgb(10, 10, 10);
+  --navbarBgColor: #111;
+
   width: 100vw;
-  min-height: 100vh;
-  background-color: rgb(10, 10, 10);
+  min-height: 200vh;
+  background-color: var(--appBgColor);
   color: var(--primaryColor)
 }
 
 .app2 {
+  --primaryColor: #222;
+  --appBgColor: #ddd;
+  --navbarBgColor: #fff;
+
   width: 100vw;
-  min-height: 100vh;
-  background-color: #eee;
-  color: var(--primaryColor2)
+  min-height: 200vh;
+  background-color: var(--appBgColor);
+  color: var(--primaryColor)
 }
 
 .modeLightDark {
   position: fixed;
   top: 15%;
-  right: 1%;
+  right: 0.5%;
   transform: translateY(-50%);
   height: 60px;
   width: 40px;
@@ -60,7 +64,7 @@ html {
 
 .lightMode {
   color: #222;
-  background: #ddd;
+  background: #fff;
   border-color: #222;
 }
 
@@ -85,4 +89,25 @@ html {
   100% {
     transform: translateY(3px);
   }
+}
+
+.mainPage {
+  width: 90vw;
+  min-height: 100vh;
+  margin: 10vh auto 0;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.title h2 {
+  font-family: 'Genos', sans-serif;
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-bottom: 10vh;
 }
