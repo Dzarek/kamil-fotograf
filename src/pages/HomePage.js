@@ -10,6 +10,11 @@ import headerSlub from "../images/header/headerSlub.jpg";
 import headerPortfolio from "../images/header/headerPortfolio.jpg";
 import headerModa from "../images/header/headerModa.jpg";
 
+import {
+  IoIosArrowDropleftCircle,
+  IoIosArrowDroprightCircle,
+} from "react-icons/io";
+
 const HomePage = () => {
   return (
     <Wrapper>
@@ -18,28 +23,74 @@ const HomePage = () => {
           // className="headerImages"
           infinite
           autoPlay={5000}
-          animationSpeed={2000}
+          animationSpeed={1000}
           slidesPerPage={1}
+          addArrowClickHandler
+          stopAutoPlayOnHover
+          arrowLeft={<IoIosArrowDropleftCircle className="arrow arrowLeft" />}
+          arrowRight={
+            <IoIosArrowDroprightCircle className="arrow arrowRight" />
+          }
         >
           <div className="headerPart">
             <img src={headerCiaza} alt="" />
             <section className="headerInfo">
-              <p>/sesje ciążowe/</p>
+              <div className="infoLine">
+                <div className="oneline"></div>
+                <p>sesje ciążowe</p>
+                <div className="oneline"></div>
+              </div>
               <h2>Sesja ciążowa dla Ciebie i Twojego brzuszka</h2>
               <Link to="/">Zobacz więcej</Link>
             </section>
           </div>
           <div className="headerPart">
             <img src={headerRodzinne} alt="" />
+            <section className="headerInfo">
+              <div className="infoLine">
+                <div className="oneline"></div>
+                <p>sesje rodzinne</p>
+                <div className="oneline"></div>
+              </div>
+              <h2>Sesja zdjęciowa z Twoimi najbliższymi</h2>
+              <Link to="/">Zobacz więcej</Link>
+            </section>
           </div>
           <div className="headerPart">
             <img src={headerSlub} alt="" />
+            <section className="headerInfo">
+              <div className="infoLine">
+                <div className="oneline"></div>
+                <p>sesje ślubne</p>
+                <div className="oneline"></div>
+              </div>
+              <h2>Romantyczna sesja ślubna</h2>
+              <Link to="/">Zobacz więcej</Link>
+            </section>
           </div>
           <div className="headerPart">
             <img src={headerPortfolio} alt="" />
+            <section className="headerInfo">
+              <div className="infoLine">
+                <div className="oneline"></div>
+                <p>zdjęcia portfolio</p>
+                <div className="oneline"></div>
+              </div>
+              <h2>Zdjęcia do Twojego CV i portfolio</h2>
+              <Link to="/">Zobacz więcej</Link>
+            </section>
           </div>
           <div className="headerPart">
             <img src={headerModa} alt="" />
+            <section className="headerInfo">
+              <div className="infoLine">
+                <div className="oneline"></div>
+                <p>moda</p>
+                <div className="oneline"></div>
+              </div>
+              <h2>Pokaż siebie i swój styl</h2>
+              <Link to="/">Zobacz więcej</Link>
+            </section>
           </div>
         </Carousel>
       </div>
@@ -55,9 +106,28 @@ const Wrapper = styled.div`
     position: relative;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -48%);
     height: 80vh;
     width: 90vw;
+    .arrow {
+      position: absolute;
+      font-size: 2rem;
+      cursor: pointer;
+      z-index: 10;
+      color: var(--primaryColor);
+      transition: 0.3s;
+      :hover {
+        color: #aaa;
+      }
+    }
+    .arrowLeft {
+      bottom: 5%;
+      right: 8%;
+    }
+    .arrowRight {
+      bottom: 5%;
+      right: 5%;
+    }
   }
   .headerPart {
     height: 80vh;
@@ -74,13 +144,56 @@ const Wrapper = styled.div`
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      /* filter: brightness(0.5); */
+      filter: brightness(0.5);
     }
     .headerInfo {
       position: absolute;
       z-index: 1;
       bottom: 10%;
       left: 10%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      /* height: 40%; */
+      width: 60%;
+      h2 {
+        font-family: "Kanit", sans-serif;
+        font-size: 2rem;
+        margin: 1vh 0 4vh 0;
+        color: white;
+      }
+      p {
+        font-family: "Genos", sans-serif;
+        font-weight: 600;
+        font-size: 1.3rem;
+        color: #ccc;
+      }
+      a {
+        font-family: "Genos", sans-serif;
+        font-size: 1.3rem;
+        color: var(--secondaryColor);
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 700;
+        border: 1px solid white;
+        border-radius: 5px;
+        width: 25%;
+        padding: 5px 0;
+        text-align: center;
+        background: whitesmoke;
+      }
+    }
+    .infoLine {
+      display: flex;
+      /* justify-content: center; */
+      align-items: center;
+      width: 50%;
+    }
+    .oneline {
+      width: 20px;
+      height: 3px;
+      background: var(--secondaryColor);
+      margin: 0 10px;
     }
   }
 `;

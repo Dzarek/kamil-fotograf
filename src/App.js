@@ -1,13 +1,36 @@
 import "./App.css";
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
+import { useState } from "react";
 
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 
+import { MdDarkMode, MdLightMode } from "react-icons/md";
+import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
+
 function App() {
+  const [lightMode, setLightMode] = useState(false);
   return (
-    <div className="app">
+    <div className={!lightMode ? "app" : "app2"}>
       <Router>
+        {!lightMode ? (
+          <button
+            onClick={() => setLightMode(true)}
+            className="modeLightDark darkMode"
+          >
+            <MdKeyboardArrowUp className="modeLightIcon" />
+            <MdLightMode />
+          </button>
+        ) : (
+          <button
+            onClick={() => setLightMode(false)}
+            className="modeLightDark lightMode"
+          >
+            <MdDarkMode />
+            <MdKeyboardArrowDown className="modeDarkIcon" />
+          </button>
+        )}
+        <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />}></Route>
         </Routes>
