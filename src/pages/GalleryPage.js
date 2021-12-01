@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { gallery } from "../data";
+import Masonry from "react-masonry-css";
+import { SRLWrapper } from "simple-react-lightbox";
 
 const allCategories = [
   ...new Set(gallery.map((item) => item.category)),
@@ -23,6 +25,19 @@ const GalleryPage = () => {
     setMenuItems(newItems);
     setActiveBtn(category);
   };
+  const breakpointColumnsObj = {
+    default: 4,
+    1280: 3,
+    900: 2,
+    500: 1,
+  };
+
+  const galleryImages = menuItems.map((item) => {
+    const { img } = item;
+    return img.map((item, index) => {
+      return <img className="oneImg" key={index} src={item} />;
+    });
+  });
 
   return (
     <Wrapper>
@@ -43,16 +58,17 @@ const GalleryPage = () => {
             );
           })}
         </div>
-        <div className="galleryContent">
-          {menuItems.map((item) => {
-            const { img } = item;
-            return img.map((item, index) => {
-              return (
-                <img className="oneImg" key={index} src={item} alt={index} />
-              );
-            });
-          })}
-        </div>
+        <SRLWrapper>
+          <div className="galleryContent">
+            <Masonry
+              breakpointCols={breakpointColumnsObj}
+              className="my-masonry-grid"
+              columnClassName="my-masonry-grid_column"
+            >
+              {galleryImages}
+            </Masonry>
+          </div>
+        </SRLWrapper>
       </div>
     </Wrapper>
   );
@@ -68,7 +84,7 @@ const Wrapper = styled.div`
     button {
       padding: 10px;
       background: transparent;
-      color: white;
+      color: var(--primaryColor);
       border: none;
       border-bottom: 2px solid var(--secondaryColor);
       border-radius: 5px;
@@ -79,7 +95,7 @@ const Wrapper = styled.div`
       font-family: "Kanit", sans-serif;
       transition: background 0.5s;
       :hover {
-        background: #333;
+        background: var(--galleryBtnBg);
       }
     }
     .activeBtn {
@@ -94,12 +110,31 @@ const Wrapper = styled.div`
     justify-content: space-between;
     align-items: space-between;
     flex-wrap: wrap;
-    padding: 5vh 12vw;
-    background: #111;
-    .oneImg {
-      height: 200px;
-      margin: 30px 10px;
+    padding: 10vh 12vw;
+    background: var(--galleryContentColor);
+  }
+  .oneImg {
+    cursor: pointer;
+    filter: brightness(0.8);
+    transition: 0.4s;
+    :hover {
+      filter: brightness(1);
     }
+  }
+  .my-masonry-grid {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+  /* .my-masonry-grid_column {
+    background-clip: padding-box;
+  } */
+
+  .my-masonry-grid_column > img {
+    background: grey;
+    margin-bottom: 30px;
+    width: 250px;
   }
 `;
 

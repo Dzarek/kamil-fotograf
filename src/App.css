@@ -23,6 +23,8 @@ html {
   --primaryColor: #ddd;
   --appBgColor: rgb(10, 10, 10);
   --navbarBgColor: #111;
+  --galleryContentColor: #111;
+  --galleryBtnBg: #333;
 
   width: 100vw;
   min-height: 200vh;
@@ -32,8 +34,10 @@ html {
 
 .app2 {
   --primaryColor: #222;
-  --appBgColor: #ddd;
+  --appBgColor: #eee;
   --navbarBgColor: #fff;
+  --galleryContentColor: #ccc;
+  --galleryBtnBg: #fff;
 
   width: 100vw;
   min-height: 200vh;
