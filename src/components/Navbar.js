@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import { Link } from "react-scroll";
+import { animateScroll as scroll } from "react-scroll";
 
 const Navbar = () => {
   const [offset, setOffset] = useState(0);
@@ -13,9 +15,23 @@ const Navbar = () => {
   return (
     <Wrapper>
       <div className={offset === 0 ? "navbar" : "navbar navbarBg"}>
-        <h5>Galeria</h5>
+        <Link
+          to="gallery"
+          smooth={true}
+          duration={1000}
+          activeClass="active"
+          spy={true}
+          offset={-100}
+        >
+          Galeria
+        </Link>
         <h5>Oferta</h5>
-        <div className="logo">
+        <div
+          onClick={() => {
+            scroll.scrollToTop();
+          }}
+          className="logo"
+        >
           <h2>
             Kamil Łach
             <div className="logoLine"></div>
@@ -48,19 +64,26 @@ const Wrapper = styled.div`
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    h5 {
+    h5,
+    a {
+      font-weight: 600;
       font-size: 1.3rem;
       font-family: "Genos", sans-serif;
       margin: 10px 1.5vw 0;
       text-transform: uppercase;
       transition: 0.4s;
       cursor: pointer;
-      :hover {
+      &.active {
         color: var(--secondaryColor);
+      }
+      :hover {
+        /* color: var(--secondaryColor); */
+        font-size: 1.4rem;
       }
     }
     .logo {
       margin: 0 5vw;
+      cursor: pointer;
       h2 {
         font-family: "Genos", sans-serif;
         font-size: 2rem;

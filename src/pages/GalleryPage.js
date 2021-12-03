@@ -1,21 +1,68 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { gallery } from "../data";
 import Masonry from "react-masonry-css";
 import { SRLWrapper } from "simple-react-lightbox";
+import ReactLoading from "react-loading";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const allCategories = [
   ...new Set(gallery.map((item) => item.category)),
   "wszystkie",
 ];
+
 const galleryCategory = gallery.filter((item) => item.category === "ciąża");
 
 const GalleryPage = () => {
   const [menuItems, setMenuItems] = useState(galleryCategory);
   const [categories] = useState(allCategories);
   const [activeBtn, setActiveBtn] = useState("ciąża");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [imagesPerPage, setImagesPerPage] = useState(10);
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
+
+  const galleryImages = menuItems.map((item) => {
+    const { img } = item;
+    return img.map((item, index) => {
+      return (
+        <img data-aos="fade-down" className="oneImg" key={index} src={item} />
+      );
+    });
+  });
+  const allImages = [...new Set(gallery.map((item) => item.img))];
+  const galleryArrays = [
+    ...allImages[0],
+    ...allImages[1],
+    ...allImages[2],
+    ...allImages[3],
+    ...allImages[4],
+  ];
+  const galleryArraysFinal = galleryArrays.map((item, index) => {
+    return (
+      <img data-aos="fade-down" className="oneImg" key={index} src={item} />
+    );
+  });
+  // console.log(galleryArraysFinal);
+
+  const indexOfLastImage = currentPage * imagesPerPage;
+  const indexOfFirstImage = indexOfLastImage - imagesPerPage;
+  const currentImages = galleryImages[0].slice(
+    indexOfFirstImage,
+    indexOfLastImage
+  );
+  // console.log(galleryImages[0]);
+
+  const currentImages2 = galleryArraysFinal.slice(
+    indexOfFirstImage,
+    indexOfLastImage
+  );
   const filterItems = (category) => {
+    setImagesPerPage(10);
     if (category === "wszystkie") {
       setMenuItems(gallery);
       setActiveBtn(category);
@@ -25,6 +72,7 @@ const GalleryPage = () => {
     setMenuItems(newItems);
     setActiveBtn(category);
   };
+
   const breakpointColumnsObj = {
     default: 4,
     1280: 3,
@@ -32,20 +80,21 @@ const GalleryPage = () => {
     500: 1,
   };
 
-  const galleryImages = menuItems.map((item) => {
-    const { img } = item;
-    return img.map((item, index) => {
-      return <img className="oneImg" key={index} src={item} />;
-    });
-  });
+  const loadImages = () => {
+    setTimeout(() => {
+      setLoading(true);
+      setImagesPerPage(imagesPerPage + 10);
+    }, 600);
+    setLoading(false);
+  };
 
   return (
     <Wrapper>
-      <div className="mainPage">
+      <div id="gallery" className="mainPage">
         <div className="title">
           <h2>Galeria</h2>
         </div>
-        <div className="galleryCategory">
+        <div data-aos="fade-up" className="galleryCategory">
           {categories.map((category, index) => {
             return (
               <button
@@ -65,8 +114,35 @@ const GalleryPage = () => {
               className="my-masonry-grid"
               columnClassName="my-masonry-grid_column"
             >
-              {galleryImages}
+              {/* {galleryImages} */}
+              {/* {currentImages} */}
+              {/* {menuItems === gallery ? galleryImages : currentImages} */}
+              {menuItems === gallery ? currentImages2 : currentImages}
             </Masonry>
+            {(menuItems === gallery &&
+              currentImages2.length !== galleryArraysFinal.length) ||
+            (menuItems !== gallery &&
+              currentImages.length !== galleryImages[0].length) ? (
+              <>
+                {loading ? (
+                  <button
+                    // onClick={() => setImagesPerPage(imagesPerPage + 10)}
+                    onClick={loadImages}
+                    className="loadImagesBtn"
+                  >
+                    Zobacz Więcej
+                  </button>
+                ) : (
+                  <ReactLoading
+                    className="loadingImg"
+                    bubbles
+                    color={"#4f7e52"}
+                    height={"6%"}
+                    width={"6%"}
+                  />
+                )}
+              </>
+            ) : null}
           </div>
         </SRLWrapper>
       </div>
@@ -107,6 +183,7 @@ const Wrapper = styled.div`
     margin: 10vh auto 0;
     margin-left: -5vw;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: space-between;
     flex-wrap: wrap;
@@ -135,6 +212,28 @@ const Wrapper = styled.div`
     background: grey;
     margin-bottom: 30px;
     width: 250px;
+  }
+  .loadImagesBtn {
+    margin: 10vh auto;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    background: var(--secondaryColor);
+    color: var(--primaryColor);
+    border: none;
+    border-radius: 5px;
+    font-family: "Genos", sans-serif;
+    font-family: "Kanit", sans-serif;
+    cursor: pointer;
+    transition: 0.4s;
+    :hover {
+      color: var(--secondaryColor);
+      background: var(--primaryColor);
+    }
+  }
+  .loadingImg {
+    margin: 10vh auto;
   }
 `;
 
