@@ -7,6 +7,7 @@ import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import GalleryPage from "./pages/GalleryPage";
+import ServicesPage from "./pages/ServicesPage";
 
 function App() {
   const [lightMode, setLightMode] = useState(false);
@@ -37,6 +38,7 @@ function App() {
         {/* </Routes> */}
         <HomePage />
         <GalleryPage />
+        <ServicesPage />
       </Router>
     </div>
   );

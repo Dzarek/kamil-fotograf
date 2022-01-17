@@ -16,6 +16,7 @@ html {
 
 :root {
   --secondaryColor: #4f7e52;
+  --secondaryColor2: #7fa581;
 }
 
 
@@ -26,10 +27,14 @@ html {
   --galleryContentColor: #111;
   --galleryBtnBg: #333;
 
+  --textFont: "Kanit", sans-serif;
+  --titleFont: 'Genos', sans-serif;
   width: 100vw;
-  min-height: 200vh;
+  min-height: 100vh;
   background-color: var(--appBgColor);
-  color: var(--primaryColor)
+  color: var(--primaryColor);
+  font-family: var(--textFont);
+  position: relative;
 }
 
 .app2 {
@@ -39,10 +44,14 @@ html {
   --galleryContentColor: #ccc;
   --galleryBtnBg: #fff;
 
+  --textFont: "Kanit", sans-serif;
+  --titleFont: 'Genos', sans-serif;
   width: 100vw;
-  min-height: 200vh;
+  min-height: 100vh;
   background-color: var(--appBgColor);
-  color: var(--primaryColor)
+  color: var(--primaryColor);
+  font-family: var(--textFont);
+  position: relative;
 }
 
 .modeLightDark {
@@ -97,8 +106,10 @@ html {
 
 .mainPage {
   width: 90vw;
+  max-width: 1360px;
   min-height: 100vh;
   margin: 10vh auto 0;
+  position: relative;
 }
 
 .title {
@@ -114,4 +125,41 @@ html {
   text-transform: uppercase;
   letter-spacing: 5px;
   margin-bottom: 10vh;
+}
+
+.subtitle {
+  font-size: 1.8rem;
+  text-align: center;
+  margin: 0vh auto 3vh;
+  color: var(--secondaryColor2);
+  /* text-transform: uppercase; */
+  font-weight: 600;
+  font-family: var(--titleFont);
+}
+
+.icon {
+  color: var(--secondaryColor2);
+  margin-right: 10px;
+  margin-top: 2px;
+  font-size: 1.5rem;
+}
+
+.details::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.details::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.details::-webkit-scrollbar-thumb {
+  background: var(--secondaryColor2);
+
+}
+
+/* Handle on hover */
+.details::-webkit-scrollbar-thumb:hover {
+  background: var(--secondaryColor);
 }

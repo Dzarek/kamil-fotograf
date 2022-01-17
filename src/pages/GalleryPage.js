@@ -89,68 +89,67 @@ const GalleryPage = () => {
   };
 
   return (
-    <Wrapper>
-      <div id="gallery" className="mainPage">
-        <div className="title">
-          <h2>Galeria</h2>
-        </div>
-        <div data-aos="fade-up" className="galleryCategory">
-          {categories.map((category, index) => {
-            return (
-              <button
-                key={index}
-                onClick={() => filterItems(category)}
-                className={activeBtn === category ? "activeBtn" : null}
-              >
-                {category}
-              </button>
-            );
-          })}
-        </div>
-        <SRLWrapper>
-          <div className="galleryContent">
-            <Masonry
-              breakpointCols={breakpointColumnsObj}
-              className="my-masonry-grid"
-              columnClassName="my-masonry-grid_column"
-            >
-              {/* {galleryImages} */}
-              {/* {currentImages} */}
-              {/* {menuItems === gallery ? galleryImages : currentImages} */}
-              {menuItems === gallery ? currentImages2 : currentImages}
-            </Masonry>
-            {(menuItems === gallery &&
-              currentImages2.length !== galleryArraysFinal.length) ||
-            (menuItems !== gallery &&
-              currentImages.length !== galleryImages[0].length) ? (
-              <>
-                {loading ? (
-                  <button
-                    // onClick={() => setImagesPerPage(imagesPerPage + 10)}
-                    onClick={loadImages}
-                    className="loadImagesBtn"
-                  >
-                    Zobacz Więcej
-                  </button>
-                ) : (
-                  <ReactLoading
-                    className="loadingImg"
-                    bubbles
-                    color={"#4f7e52"}
-                    height={"6%"}
-                    width={"6%"}
-                  />
-                )}
-              </>
-            ) : null}
-          </div>
-        </SRLWrapper>
+    <Wrapper id="gallery">
+      <div className="title">
+        <h2>Galeria</h2>
       </div>
+      <div data-aos="fade-up" className="galleryCategory">
+        {categories.map((category, index) => {
+          return (
+            <button
+              key={index}
+              onClick={() => filterItems(category)}
+              className={activeBtn === category ? "activeBtn" : null}
+            >
+              {category}
+            </button>
+          );
+        })}
+      </div>
+      <SRLWrapper>
+        <div className="galleryContent">
+          <Masonry
+            breakpointCols={breakpointColumnsObj}
+            className="my-masonry-grid"
+            columnClassName="my-masonry-grid_column"
+          >
+            {/* {galleryImages} */}
+            {/* {currentImages} */}
+            {/* {menuItems === gallery ? galleryImages : currentImages} */}
+            {menuItems === gallery ? currentImages2 : currentImages}
+          </Masonry>
+          {(menuItems === gallery &&
+            currentImages2.length !== galleryArraysFinal.length) ||
+          (menuItems !== gallery &&
+            currentImages.length !== galleryImages[0].length) ? (
+            <>
+              {loading ? (
+                <button
+                  // onClick={() => setImagesPerPage(imagesPerPage + 10)}
+                  onClick={loadImages}
+                  className="loadImagesBtn"
+                >
+                  Zobacz Więcej
+                </button>
+              ) : (
+                <ReactLoading
+                  className="loadingImg"
+                  bubbles
+                  color={"#4f7e52"}
+                  height={"6%"}
+                  width={"6%"}
+                />
+              )}
+            </>
+          ) : null}
+        </div>
+      </SRLWrapper>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
+  width: 100vw;
   .galleryCategory {
     display: flex;
     justify-content: space-around;
@@ -181,7 +180,7 @@ const Wrapper = styled.div`
   .galleryContent {
     width: 100vw;
     margin: 10vh auto 0;
-    margin-left: -5vw;
+    /* margin-left: -5vw; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;

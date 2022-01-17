@@ -25,7 +25,17 @@ const Navbar = () => {
         >
           Galeria
         </Link>
-        <h5>Oferta</h5>
+        <Link
+          to="offer"
+          smooth={true}
+          duration={1000}
+          activeClass="active"
+          spy={true}
+          offset={-100}
+        >
+          Oferta
+        </Link>
+        {/* <h5>Oferta</h5> */}
         <div
           onClick={() => {
             scroll.scrollToTop();
