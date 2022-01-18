@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
+import Aos from "aos";
+import "aos/dist/aos.css";
+
 import voucherImg from "../images/voucherSesja.jpg";
+
 import { TiArrowRightOutline } from "react-icons/ti";
 
 const Voucher = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
   return (
     <Wrapper className="voucher mainPage">
       <p className="subtitle">
@@ -11,7 +18,12 @@ const Voucher = () => {
         sesję!
       </p>
       <div className="voucherOrder">
-        <img src={voucherImg} alt="voucher" />
+        <img
+          data-aos="flip-right"
+          data-aos-offset="200"
+          src={voucherImg}
+          alt="voucher"
+        />
         {/* <button className="voucherBtn">Zamów Vocher</button> */}
       </div>
       <p>

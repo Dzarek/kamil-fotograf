@@ -1,17 +1,25 @@
+import { useEffect } from "react";
 import styled from "styled-components";
 import MyForm from "../components/MyForm";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 import { FiMapPin, FiFacebook, FiInstagram } from "react-icons/fi";
 import { BsPiggyBank } from "react-icons/bs";
 import { MdPhoneAndroid, MdMailOutline } from "react-icons/md";
 
 const ContactPage = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
   return (
     <Wrapper className="mainPage" id="contact">
       <div className="title">
         <h2>Kontakt</h2>
       </div>
-      <h3>Jeśli masz jakieś pytania, śmiało napisz do mnie lub zadzwoń!</h3>
+      <h3 data-aos="fade-up">
+        Jeśli masz jakieś pytania, śmiało napisz do mnie lub zadzwoń!
+      </h3>
       <div className="contactContainer">
         <div className="contactMedia">
           <p>

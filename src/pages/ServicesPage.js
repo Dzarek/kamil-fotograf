@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 import Carousel from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 import {
   IoIosArrowDropleftCircle,
@@ -18,12 +20,15 @@ import DetailsOffer from "../components/DetailsOffer";
 const ServicesPage = ({ showDetails, setShowDetails }) => {
   // const [showDetails, setShowDetails] = useState("");
   const oneOffer = offers.find((item) => item.category === showDetails);
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
   return (
     <Wrapper id="offer" className="mainPage">
       <div className="title">
         <h2>Oferta</h2>
       </div>
-      <p className="subtitle">
+      <p data-aos="fade-up" className="subtitle">
         Moja oferta składa się z następujących sesji zdjęciowych:
       </p>
       <Carousel

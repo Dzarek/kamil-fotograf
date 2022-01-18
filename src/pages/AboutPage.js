@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 import aboutImg from "../images/meImg.jpg";
 
 const AboutPage = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
   return (
     <Wrapper id="aboutMe">
       <div className="title">
         <h2>O mnie</h2>
       </div>
       <div className="aboutMeContainer">
-        <div className="imgContainer"></div>
-        <div className="aboutInfo">
+        <div data-aos="fade-right" className="imgContainer"></div>
+        <div data-aos="fade-left" data-aos-offset="200" className="aboutInfo">
           <h3>
             Nazywam się Kamil Łach <br /> i jestem <span>fotografem</span>.
           </h3>

@@ -219,7 +219,7 @@ const Wrapper = styled.div`
     font-size: 1rem;
     text-transform: uppercase;
     background: var(--secondaryColor);
-    color: var(--primaryColor);
+    color: white;
     border: none;
     border-radius: 5px;
     font-family: "Genos", sans-serif;
@@ -227,7 +227,7 @@ const Wrapper = styled.div`
     cursor: pointer;
     transition: 0.4s;
     :hover {
-      color: var(--secondaryColor);
+      /* color: var(--secondaryColor); */
       background: var(--primaryColor);
     }
   }
