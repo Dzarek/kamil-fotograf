@@ -187,7 +187,7 @@ const Wrapper = styled.div`
     align-items: space-between;
     flex-wrap: wrap;
     padding: 10vh 12vw;
-    background: var(--galleryContentColor);
+    background: var(--galleryBtnBg);
   }
   .oneImg {
     cursor: pointer;

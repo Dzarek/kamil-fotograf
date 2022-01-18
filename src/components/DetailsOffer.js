@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { ImCross } from "react-icons/im";
-// import { offers } from "../data";
 
 const DetailsOffer = ({ oneOffer, setShowDetails }) => {
   const {
@@ -57,12 +56,6 @@ const DetailsOffer = ({ oneOffer, setShowDetails }) => {
           <div className="secondPart">
             <h3>Opis:</h3>
             <p>{description}</p>
-            {/* <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
-              ipsam aspernatur cumque praesentium ratione tempora officia sint
-              sit adipisci expedita, ut animi aliquam nihil. Alias totam ut
-              consequuntur ducimus corrupti?
-            </p> */}
           </div>
         </div>
       </div>
@@ -89,15 +82,11 @@ const Wrapper = styled.div`
     transform: translate(-50%, -45%);
     color: white;
     overflow: auto;
-    /* padding: 30px; */
     border-radius: 5px;
     border: 2px solid var(--secondaryColor);
     header {
       width: 100%;
       height: 50%;
-      /* position: relative;
-        top: 0;
-        left: 0; */
       background-size: cover;
       background-position: center;
       filter: saturate(0.1);
@@ -121,10 +110,6 @@ const Wrapper = styled.div`
       }
     }
     .detailsTitle {
-      /* position: absolute;
-        bottom: 10%;
-        left: 50%;
-        transform: translateX(-50%); */
       margin: 2vh auto 0;
       text-align: center;
       text-transform: uppercase;

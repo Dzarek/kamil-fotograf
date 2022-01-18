@@ -8,9 +8,14 @@ import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import GalleryPage from "./pages/GalleryPage";
 import ServicesPage from "./pages/ServicesPage";
+import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
+import Footer from "./components/Footer";
 
 function App() {
   const [lightMode, setLightMode] = useState(false);
+  const [showDetails, setShowDetails] = useState("");
+
   return (
     <div className={!lightMode ? "app" : "app2"}>
       <Router>
@@ -32,13 +37,15 @@ function App() {
           </button>
         )}
         <Navbar />
-        {/* <Routes> */}
-        {/* <Route path="/" element={<HomePage />}></Route>
-          <Route path="/gallery" element={<HomePage />}></Route> */}
-        {/* </Routes> */}
-        <HomePage />
+        <HomePage setShowDetails={setShowDetails} />
         <GalleryPage />
-        <ServicesPage />
+        <ServicesPage
+          showDetails={showDetails}
+          setShowDetails={setShowDetails}
+        />
+        <AboutPage />
+        <ContactPage />
+        <Footer />
       </Router>
     </div>
   );

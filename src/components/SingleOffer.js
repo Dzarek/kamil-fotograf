@@ -13,11 +13,7 @@ const SingleOffer = ({ offer, setShowDetails }) => {
       <div className="singleContent">
         <h3 className="title">{category}</h3>
         <h2 className="price">{price} zł</h2>
-        <button
-          // onClick={() => setShowDetails("ciążowe")}
-          onClick={() => setShowDetails(category)}
-          className="detailsBtn"
-        >
+        <button onClick={() => setShowDetails(category)} className="detailsBtn">
           szczegóły
         </button>
       </div>

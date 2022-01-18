@@ -54,6 +54,12 @@ import slubne10 from "./images/gallery/ślubne/11.jpg";
 import slubne11 from "./images/gallery/ślubne/12.jpg";
 import slubne12 from "./images/gallery/ślubne/13.jpg";
 
+import headerCiaza from "./images/header/headerCiaza.jpg";
+import headerModa from "./images/header/headerModa.jpg";
+import headerPortfolio from "./images/header/headerPortfolio.jpg";
+import headerRodzinne from "./images/header/headerRodzinne.jpg";
+import headerSlub from "./images/header/headerSlub.jpg";
+
 export const gallery = [
   {
     id: 1,
@@ -200,5 +206,43 @@ export const offers = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam aspernatur cumque praesentium ratione tempora officia sint sit adipisci expedita, ut animi aliquam nihil. Alias totam ut consequuntur ducimus corrupti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ipsam aspernatur cumque praesentium ratione tempora officia sint sit adipisci expedita, ut animi aliquam nihil. Alias totam ut consequuntur ducimus corrupti?",
     imgs: [slubne6, slubne9],
+  },
+];
+
+export const headerData = [
+  {
+    id: 1,
+    img: headerCiaza,
+    shortTitle: "sesje ciążowe",
+    longTitle: "Sesja ciążowa dla Ciebie i Twojego brzuszka",
+    category: "ciążowe",
+  },
+  {
+    id: 2,
+    img: headerRodzinne,
+    shortTitle: "sesje rodzinne",
+    longTitle: "Sesja zdjęciowa z Twoimi najbliższymi",
+    category: "rodzinne",
+  },
+  {
+    id: 3,
+    img: headerSlub,
+    shortTitle: "sesje ślubne",
+    longTitle: "Romantyczna sesja ślubna",
+    category: "ślubne",
+  },
+  {
+    id: 4,
+    img: headerPortfolio,
+    shortTitle: "zdjęcia portretowe",
+    longTitle: "Zdjęcia do Twojego CV i portfolio",
+    category: "portrety",
+  },
+  {
+    id: 5,
+    img: headerModa,
+    shortTitle: "sesje mody",
+    longTitle: "Pokaż siebie i swój styl",
+    category: "moda",
   },
 ];

@@ -2,22 +2,24 @@ import React from "react";
 import styled from "styled-components";
 import Carousel from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
+// import { animateScroll as scroll } from "react-scroll";
 
-import headerCiaza from "../images/header/headerCiaza.jpg";
-import headerRodzinne from "../images/header/headerRodzinne.jpg";
-import headerSlub from "../images/header/headerSlub.jpg";
-import headerPortfolio from "../images/header/headerPortfolio.jpg";
-import headerModa from "../images/header/headerModa.jpg";
+import { headerData } from "../data";
 
 import {
   IoIosArrowDropleftCircle,
   IoIosArrowDroprightCircle,
 } from "react-icons/io";
-
 import { FaFacebookSquare, FaInstagramSquare } from "react-icons/fa";
 
-const HomePage = () => {
+const HomePage = ({ setShowDetails }) => {
+  const handleShowDetails = (category) => {
+    setTimeout(() => {
+      setShowDetails(category);
+    }, 1000);
+  };
+
   return (
     <Wrapper>
       <div className="fbAndInst">
@@ -32,7 +34,6 @@ const HomePage = () => {
       </div>
       <div className="headerImages">
         <Carousel
-          // className="headerImages"
           infinite
           autoPlay={5000}
           animationSpeed={1000}
@@ -44,66 +45,32 @@ const HomePage = () => {
             <IoIosArrowDroprightCircle className="arrow arrowRight" />
           }
         >
-          <div className="headerPart">
-            <img src={headerCiaza} alt="" />
-            <section className="headerInfo">
-              <div className="infoLine">
-                <div className="oneline"></div>
-                <p>sesje ciążowe</p>
-                <div className="oneline"></div>
+          {headerData.map((item) => {
+            const { id, img, shortTitle, longTitle, category } = item;
+            return (
+              <div key={id} className="headerPart">
+                <img src={img} alt={shortTitle} />
+                <section className="headerInfo">
+                  <div className="infoLine">
+                    <div className="oneline"></div>
+                    <p>{shortTitle}</p>
+                    <div className="oneline"></div>
+                  </div>
+                  <h2>{longTitle}</h2>
+                  <Link
+                    to="offer"
+                    smooth={true}
+                    duration={1000}
+                    activeClass="active"
+                    spy={true}
+                    onClick={() => handleShowDetails(category)}
+                  >
+                    Zobacz więcej
+                  </Link>
+                </section>
               </div>
-              <h2>Sesja ciążowa dla Ciebie i Twojego brzuszka</h2>
-              <Link to="/">Zobacz więcej</Link>
-            </section>
-          </div>
-          <div className="headerPart">
-            <img src={headerRodzinne} alt="" />
-            <section className="headerInfo">
-              <div className="infoLine">
-                <div className="oneline"></div>
-                <p>sesje rodzinne</p>
-                <div className="oneline"></div>
-              </div>
-              <h2>Sesja zdjęciowa z Twoimi najbliższymi</h2>
-              <Link to="/">Zobacz więcej</Link>
-            </section>
-          </div>
-          <div className="headerPart">
-            <img src={headerSlub} alt="" />
-            <section className="headerInfo">
-              <div className="infoLine">
-                <div className="oneline"></div>
-                <p>sesje ślubne</p>
-                <div className="oneline"></div>
-              </div>
-              <h2>Romantyczna sesja ślubna</h2>
-              <Link to="/">Zobacz więcej</Link>
-            </section>
-          </div>
-          <div className="headerPart">
-            <img src={headerPortfolio} alt="" />
-            <section className="headerInfo">
-              <div className="infoLine">
-                <div className="oneline"></div>
-                <p>zdjęcia portfolio</p>
-                <div className="oneline"></div>
-              </div>
-              <h2>Zdjęcia do Twojego CV i portfolio</h2>
-              <Link to="/">Zobacz więcej</Link>
-            </section>
-          </div>
-          <div className="headerPart">
-            <img src={headerModa} alt="" />
-            <section className="headerInfo">
-              <div className="infoLine">
-                <div className="oneline"></div>
-                <p>moda</p>
-                <div className="oneline"></div>
-              </div>
-              <h2>Pokaż siebie i swój styl</h2>
-              <Link to="/">Zobacz więcej</Link>
-            </section>
-          </div>
+            );
+          })}
         </Carousel>
       </div>
     </Wrapper>
@@ -219,6 +186,7 @@ const Wrapper = styled.div`
         text-align: center;
         background: whitesmoke;
         transition: 0.4s;
+        cursor: pointer;
         :hover {
           background: var(--secondaryColor);
           color: var(--primaryColor);

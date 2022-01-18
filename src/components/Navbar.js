@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { Link } from "react-scroll";
 import { animateScroll as scroll } from "react-scroll";
 
+import { BsFillArrowUpSquareFill } from "react-icons/bs";
+
 const Navbar = () => {
   const [offset, setOffset] = useState(0);
 
@@ -35,7 +37,6 @@ const Navbar = () => {
         >
           Oferta
         </Link>
-        {/* <h5>Oferta</h5> */}
         <div
           onClick={() => {
             scroll.scrollToTop();
@@ -48,9 +49,35 @@ const Navbar = () => {
             <span>Fotograf</span>{" "}
           </h2>
         </div>
-        <h5>O mnie</h5>
-        <h5>Kontakt</h5>
+        <Link
+          to="aboutMe"
+          smooth={true}
+          duration={1000}
+          activeClass="active"
+          spy={true}
+          offset={-30}
+        >
+          O mnie
+        </Link>
+        <Link
+          to="contact"
+          smooth={true}
+          duration={1000}
+          activeClass="active"
+          spy={true}
+          offset={-100}
+        >
+          Kontakt
+        </Link>
       </div>
+      <button
+        className={offset > 200 ? "upBtn" : "upBtn upBtnNone"}
+        onClick={() => {
+          scroll.scrollToTop();
+        }}
+      >
+        <BsFillArrowUpSquareFill />
+      </button>
     </Wrapper>
   );
 };
@@ -160,6 +187,23 @@ const Wrapper = styled.div`
   .navbarBg {
     background: var(--navbarBgColor);
     transition: 0.5s;
+  }
+  .upBtn {
+    position: fixed;
+    bottom: 7vh;
+    right: 3vw;
+    font-size: 2rem;
+    background: transparent;
+    border: none;
+    color: var(--primaryColor);
+    transition: 0.5s;
+    cursor: pointer;
+    :hover {
+      color: var(--secondaryColor2);
+    }
+  }
+  .upBtnNone {
+    opacity: 0;
   }
 `;
 
