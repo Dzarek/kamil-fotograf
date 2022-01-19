@@ -1,5 +1,5 @@
 import "./App.css";
-import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import { useState } from "react";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";

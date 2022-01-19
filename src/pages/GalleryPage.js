@@ -18,7 +18,8 @@ const GalleryPage = () => {
   const [menuItems, setMenuItems] = useState(galleryCategory);
   const [categories] = useState(allCategories);
   const [activeBtn, setActiveBtn] = useState("ciąża");
-  const [currentPage, setCurrentPage] = useState(1);
+  // const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage] = useState(1);
   const [imagesPerPage, setImagesPerPage] = useState(10);
   const [loading, setLoading] = useState(true);
 
@@ -30,7 +31,13 @@ const GalleryPage = () => {
     const { img } = item;
     return img.map((item, index) => {
       return (
-        <img data-aos="fade-down" className="oneImg" key={index} src={item} />
+        <img
+          data-aos="fade-down"
+          className="oneImg"
+          key={index}
+          src={item}
+          alt={index + 1}
+        />
       );
     });
   });
@@ -44,7 +51,13 @@ const GalleryPage = () => {
   ];
   const galleryArraysFinal = galleryArrays.map((item, index) => {
     return (
-      <img data-aos="fade-down" className="oneImg" key={index} src={item} />
+      <img
+        data-aos="fade-down"
+        className="oneImg"
+        key={index}
+        src={item}
+        alt={index + 1}
+      />
     );
   });
   // console.log(galleryArraysFinal);
