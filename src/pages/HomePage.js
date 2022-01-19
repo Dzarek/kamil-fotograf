@@ -21,7 +21,7 @@ const HomePage = ({ setShowDetails }) => {
   };
 
   return (
-    <Wrapper>
+    <Wrapper id="home">
       <div className="fbAndInst">
         <div>
           <FaFacebookSquare className="fbInIcon" />
@@ -90,6 +90,10 @@ const Wrapper = styled.div`
     justify-content: center;
     align-items: center;
     width: 5vw;
+    @media screen and (max-width: 800px) {
+      display: none;
+    }
+
     div {
       display: flex;
       align-items: center;
@@ -132,6 +136,16 @@ const Wrapper = styled.div`
       bottom: 5%;
       right: 5%;
     }
+    @media screen and (max-width: 800px) {
+      height: 90vh;
+      width: 100vw;
+      top: 0%;
+      transform: translateX(-50%);
+
+      .arrowLeft {
+        right: 15%;
+      }
+    }
   }
   .headerPart {
     height: 80vh;
@@ -140,6 +154,10 @@ const Wrapper = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    @media screen and (max-width: 800px) {
+      height: 90vh;
+      width: 100vw;
+    }
     img {
       width: 100%;
       height: 100%;
@@ -192,18 +210,34 @@ const Wrapper = styled.div`
           color: var(--primaryColor);
         }
       }
+      @media screen and (max-width: 800px) {
+        width: 90%;
+        left: 5%;
+        bottom: 5%;
+        h2 {
+          font-size: 1.7rem;
+          margin: 1vh 0 5vh 0;
+        }
+        a {
+          width: 50%;
+          font-size: 1.1rem;
+        }
+      }
     }
     .infoLine {
       display: flex;
       /* justify-content: center; */
       align-items: center;
       width: 50%;
+      @media screen and (max-width: 800px) {
+        width: 100%;
+      }
     }
     .oneline {
       width: 20px;
       height: 3px;
       background: var(--secondaryColor);
-      margin: 0 10px;
+      margin: 5px 10px 0;
     }
   }
 `;

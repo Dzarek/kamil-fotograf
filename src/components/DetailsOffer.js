@@ -84,6 +84,11 @@ const Wrapper = styled.div`
     overflow: auto;
     border-radius: 5px;
     border: 2px solid var(--secondaryColor);
+    @media screen and (max-width: 800px) {
+      width: 100vw;
+      height: 100vh;
+      transform: translate(-50%, -50%);
+    }
     header {
       width: 100%;
       height: 50%;
@@ -124,10 +129,17 @@ const Wrapper = styled.div`
       justify-content: space-between;
       align-items: flex-start;
       font-family: var(--textFont);
+      @media screen and (max-width: 800px) {
+        flex-direction: column;
+      }
       .firstPart {
         width: 40%;
         display: flex;
         flex-direction: column;
+        @media screen and (max-width: 800px) {
+          width: 90%;
+          margin: 0 auto;
+        }
         h3 {
           margin-bottom: 3vh;
           span {
@@ -141,12 +153,21 @@ const Wrapper = styled.div`
         width: 2px;
         height: 40vh;
         justify-self: center;
+        @media screen and (max-width: 800px) {
+          width: 70vw;
+          height: 2px;
+          margin: 5vh auto;
+        }
       }
       .secondPart {
         width: 50%;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
+        @media screen and (max-width: 800px) {
+          width: 90%;
+          margin: 0 auto;
+        }
         h3 {
           font-family: var(--titleFont);
           color: var(--secondaryColor2);

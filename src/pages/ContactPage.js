@@ -79,6 +79,9 @@ const Wrapper = styled.div`
     font-weight: 500;
     font-size: 2rem;
     color: var(--secondaryColor2);
+    @media screen and (max-width: 800px) {
+      font-size: 1.5rem;
+    }
   }
   .contactContainer {
     display: flex;
@@ -91,6 +94,7 @@ const Wrapper = styled.div`
     @media screen and (max-width: 800px) {
       flex-direction: column;
       margin-top: 5vh;
+      margin-bottom: 15vh;
     }
   }
   .contactMedia {
@@ -107,6 +111,12 @@ const Wrapper = styled.div`
       align-items: center;
       justify-content: flex-start;
       margin: 2vh auto 0 2vh;
+      @media screen and (max-width: 800px) {
+        flex-direction: column;
+        width: 100%;
+        margin: 0vh auto 6vh;
+        text-align: center;
+      }
       span {
         border: 2px solid var(--secondaryColor);
         border-radius: 50%;
@@ -116,11 +126,23 @@ const Wrapper = styled.div`
         align-items: center;
         justify-content: center;
         margin-right: 10px;
+        @media screen and (max-width: 800px) {
+          margin: 0 auto 1vh auto;
+          /* width: 80px;
+          height: 80px; */
+          /* font-size: 2rem; */
+        }
       }
     }
     .fbIn {
       align-self: center;
       margin: 2vh auto;
+      @media screen and (max-width: 800px) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+      }
       a {
         border: 2px solid var(--secondaryColor);
         border-radius: 50%;
@@ -136,6 +158,11 @@ const Wrapper = styled.div`
         :hover {
           background: var(--secondaryColor);
         }
+        /* @media screen and (max-width: 800px) {
+          width: 80px;
+          height: 80px;
+          font-size: 2rem;
+        } */
       }
     }
   }
@@ -147,6 +174,7 @@ const Wrapper = styled.div`
     height: 100%;
     @media screen and (max-width: 800px) {
       width: 95vw;
+      margin-top: 5vh;
     }
   }
 `;

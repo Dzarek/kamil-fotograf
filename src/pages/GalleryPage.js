@@ -156,6 +156,10 @@ const Wrapper = styled.div`
     align-items: center;
     width: 60vw;
     margin: 0 auto;
+    @media screen and (max-width: 800px) {
+      width: 90vw;
+      flex-wrap: wrap;
+    }
     button {
       padding: 10px;
       background: transparent;
@@ -171,6 +175,12 @@ const Wrapper = styled.div`
       transition: background 0.5s;
       :hover {
         background: var(--galleryBtnBg);
+      }
+      @media screen and (max-width: 800px) {
+        margin: 2vh 5vw;
+        :hover {
+          background: none;
+        }
       }
     }
     .activeBtn {
@@ -188,6 +198,9 @@ const Wrapper = styled.div`
     flex-wrap: wrap;
     padding: 10vh 12vw;
     background: var(--galleryBtnBg);
+    @media screen and (max-width: 800px) {
+      padding: 30px 0;
+    }
   }
   .oneImg {
     cursor: pointer;
@@ -211,6 +224,9 @@ const Wrapper = styled.div`
     background: grey;
     margin-bottom: 30px;
     width: 250px;
+    @media screen and (max-width: 800px) {
+      width: 100vw;
+    }
   }
   .loadImagesBtn {
     margin: 10vh auto;

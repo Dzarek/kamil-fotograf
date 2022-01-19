@@ -101,6 +101,23 @@ const Wrapper = styled.div`
       font-size: 2rem;
       color: var(--secondaryColor);
       cursor: pointer;
+      @media screen and (max-width: 800px) {
+        z-index: 9;
+        position: absolute;
+        color: #ddd;
+        font-size: 3rem;
+        opacity: 0.6;
+        /* top: 50%; */
+        /* transform: translateY(-50%); */
+      }
+    }
+    @media screen and (max-width: 800px) {
+      .arrowRight {
+        right: 0;
+      }
+      .arrowLeft {
+        left: 0;
+      }
     }
   }
   .servicesInfo {
@@ -112,6 +129,14 @@ const Wrapper = styled.div`
       margin-bottom: 2vh;
       font-size: 1.2rem;
       display: flex;
+    }
+    @media screen and (max-width: 800px) {
+      width: 90%;
+      p {
+        font-size: 1.1rem;
+        justify-content: flex-start;
+        margin-bottom: 4vh;
+      }
     }
   }
 `;

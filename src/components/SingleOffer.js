@@ -25,6 +25,9 @@ const Wrapper = styled.div`
   width: 90%;
   height: 65vh;
   position: relative;
+  @media screen and (max-width: 800px) {
+    width: 100%;
+  }
   .singleBG {
     width: 100%;
     height: 100%;

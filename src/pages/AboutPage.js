@@ -79,6 +79,27 @@ const Wrapper = styled.div`
         font-size: 1.2rem;
       }
     }
+    @media screen and (max-width: 800px) {
+      width: 100vw;
+      flex-direction: column;
+      padding-bottom: 10vh;
+      .imgContainer {
+        border-radius: 50%;
+        height: 80vw;
+        width: 80vw;
+        margin-bottom: 10vh;
+      }
+      .aboutInfo {
+        width: 90%;
+        /* text-align: center; */
+        h3 {
+          text-align: left;
+        }
+        p {
+          text-align: right;
+        }
+      }
+    }
   }
 `;
 

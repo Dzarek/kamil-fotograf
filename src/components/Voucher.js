@@ -24,7 +24,6 @@ const Voucher = () => {
           src={voucherImg}
           alt="voucher"
         />
-        {/* <button className="voucherBtn">Zamów Vocher</button> */}
       </div>
       <p>
         Voucher podarunkowy na sesję fotograficzną to dzisiaj popularny prezent!
@@ -73,8 +72,14 @@ const Wrapper = styled.div`
   flex-direction: column;
   min-height: 100vh;
   width: 80vw;
+  @media screen and (max-width: 800px) {
+    width: 100vw;
+  }
   .subtitle {
     font-size: 1.8rem;
+    @media screen and (max-width: 800px) {
+      font-size: 1.6rem;
+    }
   }
   .voucherOrder {
     display: flex;
@@ -82,9 +87,16 @@ const Wrapper = styled.div`
     align-items: center;
     width: 80vw;
     margin: 0 auto;
+    @media screen and (max-width: 800px) {
+      width: 100vw;
+    }
     img {
       height: 50vh;
       margin: 5vh auto;
+      @media screen and (max-width: 800px) {
+        width: 100vw;
+        height: auto;
+      }
     }
     /* button {
       padding: 10px 20px;
@@ -100,6 +112,10 @@ const Wrapper = styled.div`
     font-size: 1.2rem;
     width: 90%;
     margin: 3vh auto;
+    @media screen and (max-width: 800px) {
+      width: 80%;
+      text-align: center;
+    }
   }
   ul {
     width: 80%;
@@ -111,6 +127,13 @@ const Wrapper = styled.div`
     li {
       font-size: 1.2rem;
       display: flex;
+    }
+    @media screen and (max-width: 800px) {
+      width: 90%;
+      li {
+        margin-bottom: 2vh;
+        font-size: 1.1rem;
+      }
     }
   }
 `;

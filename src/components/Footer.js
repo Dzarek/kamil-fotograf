@@ -21,6 +21,12 @@ const Wrapper = styled.div`
   background: var(--navbarBgColor);
   font-family: var(--titleFont);
   font-size: 1.3rem;
+  @media screen and (max-width: 800px) {
+    margin-bottom: 10vh;
+    height: 12vh;
+    text-align: center;
+    border-bottom: 2px solid var(--secondaryColor);
+  }
 `;
 
 export default Footer;
