@@ -96,7 +96,7 @@ class MyForm extends Component {
           buttonStyle={{
             color: "white",
             fontSize: "18px",
-            backgroundColor: "rgb(120, 2, 2)",
+            backgroundColor: "#4f7e52",
             padding: "10px",
             borderRadius: "5px",
           }}

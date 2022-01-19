@@ -184,3 +184,9 @@ body {
 .details::-webkit-scrollbar-thumb:hover {
   background: var(--secondaryColor);
 }
+
+.cookieLink {
+  margin-left: 10px;
+  cursor: pointer;
+  color: var(--secondaryColor);
+}
