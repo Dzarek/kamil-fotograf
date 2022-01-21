@@ -45,7 +45,9 @@ const Wrapper = styled.div`
   min-height: 100vh;
   margin: 10vh auto 0;
   position: relative;
-  padding-top: 5vh;
+  @media screen and (max-width: 800px) {
+    padding-top: 10vh;
+  }
   .aboutMeContainer {
     max-width: 1360px;
     width: 70%;
