@@ -164,7 +164,8 @@ const GalleryPage = () => {
 const Wrapper = styled.div`
   width: 100vw;
   @media screen and (max-width: 800px) {
-    margin-top: 5vh;
+    /* margin-top: 5vh; */
+    padding-top: 5vh;
   }
   .galleryCategory {
     display: flex;

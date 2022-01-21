@@ -74,6 +74,7 @@ const ContactPage = () => {
 const Wrapper = styled.div`
   @media screen and (max-width: 800px) {
     width: 90vw;
+    padding-top: 5vh;
   }
   h3 {
     margin: -3vh auto 12vh;
