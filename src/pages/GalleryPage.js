@@ -163,6 +163,9 @@ const GalleryPage = () => {
 
 const Wrapper = styled.div`
   width: 100vw;
+  @media screen and (max-width: 800px) {
+    margin-top: 5vh;
+  }
   .galleryCategory {
     display: flex;
     justify-content: space-around;
@@ -190,14 +193,18 @@ const Wrapper = styled.div`
         background: var(--galleryBtnBg);
       }
       @media screen and (max-width: 800px) {
-        margin: 2vh 5vw;
+        margin: 2vh 2vw;
+        width: 40%;
+        padding: 10px 5px;
+
         :hover {
-          background: none;
+          background: #333;
         }
       }
     }
     .activeBtn {
       border: 2px solid var(--secondaryColor);
+      background: #333;
     }
   }
   .galleryContent {

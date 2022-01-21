@@ -61,30 +61,41 @@ const ServicesPage = ({ showDetails, setShowDetails }) => {
         <DetailsOffer oneOffer={oneOffer} setShowDetails={setShowDetails} />
       )}
       <div className="servicesInfo">
-        <p>
-          <TiArrowRightOutline className="icon" />
-          Zdjęcia są wykonywane profesionalnym sprzętem fotograficznym,
-          odpowiednim do scenerii oraz typu sesji zdjęciowej.
-        </p>
-        <p>
-          <TiArrowRightOutline className="icon" />
-          <span>
+        <section>
+          <p>
+            <TiArrowRightOutline className="icon" />
+          </p>
+          <p>
+            Zdjęcia są wykonywane profesionalnym sprzętem fotograficznym,
+            odpowiednim do scenerii oraz typu sesji zdjęciowej.
+          </p>
+        </section>
+        <section>
+          <p>
+            <TiArrowRightOutline className="icon" />
+          </p>
+          <p>
             Cena uwzględnia samą sesję zdjęciową i nie obejmuje ona ceny
             ewentualnego albumu oraz kosztów dojazdu. Ostateczna kwota jest
             uzgodniona podpisując umowę.
-          </span>
-        </p>
-        <p>
-          <TiArrowRightOutline className="icon" />
-          Umowę można zawrzeć podczas spotkania lub korespondencyjnie. Zawarcie
-          umowy wymaga wpłacenia zaliczki. Wysokość zaliczki jest równa 50%
-          całkowitej ceny.
-        </p>
-        <p>
-          <TiArrowRightOutline className="icon" />
-          Działam na terenie powiatu krakowskiego oraz brzeskiego.
-        </p>
-        <p></p>
+          </p>
+        </section>
+        <section>
+          <p>
+            <TiArrowRightOutline className="icon" />
+          </p>
+          <p>
+            Umowę można zawrzeć podczas spotkania lub korespondencyjnie.
+            Zawarcie umowy wymaga wpłacenia zaliczki. Wysokość zaliczki jest
+            równa 50% całkowitej ceny.
+          </p>
+        </section>
+        <section>
+          <p>
+            <TiArrowRightOutline className="icon" />
+          </p>
+          <p>Działam na terenie powiatu krakowskiego oraz brzeskiego.</p>
+        </section>
       </div>
       <Voucher />
     </Wrapper>
@@ -125,17 +136,21 @@ const Wrapper = styled.div`
     flex-direction: column;
     width: 80%;
     margin: 5vh auto;
-    p {
+    section {
       margin-bottom: 2vh;
       font-size: 1.2rem;
       display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
     }
     @media screen and (max-width: 800px) {
       width: 90%;
-      p {
+      section {
         font-size: 1.1rem;
-        justify-content: flex-start;
         margin-bottom: 4vh;
+      }
+      .icon {
+        font-size: 1rem;
       }
     }
   }

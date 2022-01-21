@@ -25,43 +25,65 @@ const Voucher = () => {
           alt="voucher"
         />
       </div>
-      <p>
+      <h4>
         Voucher podarunkowy na sesję fotograficzną to dzisiaj popularny prezent!
         Spraw przyjemność swoim najbliższym i podaruj im okazję do stworzenia
         sobie niezwykłej pamiątki.
-      </p>
-      <ul>
+      </h4>
+      <div className="voucherInfo">
         <h3 className="subtitle">Jak zamówić voucher?</h3>
-        <li>
-          <TiArrowRightOutline className="icon" />
-          Wybierz rodzaj sesji zdjęciowej aby sprawdzić cenę. Cena uwzględnia
-          samą sesję zdjęciową, bez kosztu ewentualnego albumu i dojazdu.
-        </li>
-        <li>
-          <TiArrowRightOutline className="icon" />
-          Wyśli przelew na konto: Alior Bank 00 0000 0000 0000 0000 0000 0000. W
-          tytule przelewu należy podać nazwę sesji zdjęciowej.
-        </li>
-        <li>
-          {" "}
-          <TiArrowRightOutline className="icon" />
-          Wyśli potwierdzenie przelewu na kamilfotograf@gmail.com.
-        </li>
-        <li>
-          <TiArrowRightOutline className="icon" />
-          Po zaksięgowaniu przelewu przygotowuje voucher i wystawiam rachunek.
-        </li>
-        <li>
-          <TiArrowRightOutline className="icon" />
-          Voucher wraz z rachunkiem za przelew wysyłam listem poleconym Pocztą
-          Polską.
-        </li>
-      </ul>
-      <p>
+        <section>
+          <p>
+            <TiArrowRightOutline className="icon" />
+          </p>
+
+          <p>
+            Wybierz rodzaj sesji zdjęciowej aby sprawdzić cenę. Cena uwzględnia
+            samą sesję zdjęciową, bez kosztu ewentualnego albumu i dojazdu.
+          </p>
+        </section>
+        <section>
+          <p>
+            <TiArrowRightOutline className="icon" />
+          </p>
+
+          <p>
+            Wyśli przelew na konto: Alior Bank 00 0000 0000 0000 0000 0000 0000.
+            W tytule przelewu należy podać nazwę sesji zdjęciowej.
+          </p>
+        </section>
+        <section>
+          <p>
+            <TiArrowRightOutline className="icon" />
+          </p>
+
+          <p>Wyśli potwierdzenie przelewu na kamilfotograf@gmail.com.</p>
+        </section>
+        <section>
+          <p>
+            <TiArrowRightOutline className="icon" />
+          </p>
+
+          <p>
+            Po zaksięgowaniu przelewu przygotowuje voucher i wystawiam rachunek.
+          </p>
+        </section>
+        <section>
+          <p>
+            <TiArrowRightOutline className="icon" />
+          </p>
+
+          <p>
+            Voucher wraz z rachunkiem za przelew wysyłam listem poleconym Pocztą
+            Polską.
+          </p>
+        </section>
+      </div>
+      <h4>
         Voucher jest ważny przez dwa lata od dnia wystawienia. W razie
         jakichkolwiek pytań napisz do mnie poprzez formularz kontaktowy, lub
         zadzwoń pod numer 123 456 789 aby ustalić szczegóły.
-      </p>
+      </h4>
     </Wrapper>
   );
 };
@@ -79,6 +101,7 @@ const Wrapper = styled.div`
     font-size: 1.8rem;
     @media screen and (max-width: 800px) {
       font-size: 1.6rem;
+      width: 90%;
     }
   }
   .voucherOrder {
@@ -108,7 +131,7 @@ const Wrapper = styled.div`
       margin-left: 5vw;
     } */
   }
-  p {
+  h4 {
     font-size: 1.2rem;
     width: 90%;
     margin: 3vh auto;
@@ -117,22 +140,26 @@ const Wrapper = styled.div`
       text-align: center;
     }
   }
-  ul {
-    width: 80%;
-    margin: 3vh auto;
+  .voucherInfo {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    list-style: none;
-    li {
+    width: 80%;
+    margin: 3vh auto;
+    section {
       font-size: 1.2rem;
       display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      margin-bottom: 2vh;
     }
     @media screen and (max-width: 800px) {
       width: 90%;
-      li {
-        margin-bottom: 2vh;
+      section {
         font-size: 1.1rem;
+        margin-bottom: 2vh;
+      }
+      .icon {
+        font-size: 1rem;
       }
     }
   }

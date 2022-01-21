@@ -17,7 +17,7 @@ const HomePage = ({ setShowDetails }) => {
   const handleShowDetails = (category) => {
     setTimeout(() => {
       setShowDetails(category);
-    }, 1000);
+    }, 1500);
   };
 
   return (

@@ -72,6 +72,9 @@ const ContactPage = () => {
 };
 
 const Wrapper = styled.div`
+  @media screen and (max-width: 800px) {
+    width: 90vw;
+  }
   h3 {
     margin: -3vh auto 12vh;
     text-align: center;
@@ -104,7 +107,7 @@ const Wrapper = styled.div`
     justify-content: center;
     align-items: flex-start;
     @media screen and (max-width: 800px) {
-      width: 95vw;
+      width: 90vw;
     }
     p {
       display: flex;
@@ -173,7 +176,7 @@ const Wrapper = styled.div`
     align-items: center;
     height: 100%;
     @media screen and (max-width: 800px) {
-      width: 95vw;
+      width: 90vw;
       margin-top: 5vh;
     }
   }

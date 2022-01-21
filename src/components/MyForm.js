@@ -92,6 +92,7 @@ class MyForm extends Component {
             display: "flex",
             justifyContent: "space-around",
             alignItems: "center",
+            zIndex: 999999,
           }}
           buttonStyle={{
             color: "white",
@@ -100,7 +101,7 @@ class MyForm extends Component {
             padding: "10px",
             borderRadius: "5px",
           }}
-          expires={7}
+          expires={0}
         >
           Strona korzysta z plików cookies. Pozostając na niej wyrażasz zgodę na
           ich używanie. <br /> Ze szczegółowymi informacjami dotyczącymi cookies
@@ -126,10 +127,10 @@ const Wrapper = styled.div`
     justify-content: space-between;
     align-items: center;
     @media screen and (max-width: 800px) {
-      width: 95vw;
+      width: 90vw;
     }
     @media (orientation: landscape) and (max-width: 500px) {
-      width: 95vw;
+      width: 90vw;
     }
 
     button {
