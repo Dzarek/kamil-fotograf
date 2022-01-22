@@ -24,8 +24,8 @@ const ServicesPage = ({ showDetails, setShowDetails }) => {
     Aos.init({ duration: 1000 });
   }, []);
   return (
-    <Wrapper className="mainPage">
-      <div id="offer" className="title">
+    <Wrapper id="offer" className="mainPage">
+      <div className="title">
         <h2>Oferta</h2>
       </div>
       <p data-aos="fade-up" className="subtitle">

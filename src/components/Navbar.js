@@ -126,7 +126,7 @@ const Navbar = () => {
             duration={1000}
             activeClass="active"
             spy={true}
-            // offset={-10}
+            // offset={20}
           >
             <FaHandshake />
           </Link>
