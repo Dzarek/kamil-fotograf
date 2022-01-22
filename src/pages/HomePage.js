@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Carousel from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
@@ -19,6 +19,18 @@ const HomePage = ({ setShowDetails }) => {
       setShowDetails(category);
     }, 1500);
   };
+  const [width, setWidth] = useState(window.innerWidth);
+  function handleWindowSizeChange() {
+    setWidth(window.innerWidth);
+  }
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowSizeChange);
+    return () => {
+      window.removeEventListener("resize", handleWindowSizeChange);
+    };
+  }, []);
+
+  const isMobile = width <= 800;
 
   return (
     <Wrapper id="home">
@@ -46,10 +58,18 @@ const HomePage = ({ setShowDetails }) => {
           }
         >
           {headerData.map((item) => {
-            const { id, img, shortTitle, longTitle, category } = item;
+            const { id, img, imgM, shortTitle, longTitle, category } = item;
             return (
               <div key={id} className="headerPart">
-                <img src={img} alt={shortTitle} />
+                <div
+                  className="headerPartImg"
+                  style={
+                    isMobile
+                      ? { backgroundImage: `url(${imgM})` }
+                      : { backgroundImage: `url(${img})` }
+                  }
+                ></div>
+                {/* <img src={img} alt={shortTitle} /> */}
                 <section className="headerInfo">
                   <div className="infoLine">
                     <div className="oneline"></div>
@@ -158,15 +178,21 @@ const Wrapper = styled.div`
       height: 90vh;
       width: 100vw;
     }
-    img {
+    .headerPartImg {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      /* object-fit: cover; */
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       filter: brightness(0.5);
+      background-size: cover;
+      background-position: center;
+      @media screen and (max-width: 800px) {
+        height: 90vh;
+        width: 100vw;
+      }
     }
     .headerInfo {
       position: absolute;

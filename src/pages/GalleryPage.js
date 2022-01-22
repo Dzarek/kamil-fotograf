@@ -102,8 +102,8 @@ const GalleryPage = () => {
   };
 
   return (
-    <Wrapper id="gallery">
-      <div className="title">
+    <Wrapper>
+      <div id="gallery" className="title">
         <h2>Galeria</h2>
       </div>
       <div data-aos="fade-up" className="galleryCategory">

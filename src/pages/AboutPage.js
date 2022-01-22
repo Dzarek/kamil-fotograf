@@ -10,8 +10,8 @@ const AboutPage = () => {
     Aos.init({ duration: 1000 });
   }, []);
   return (
-    <Wrapper id="aboutMe">
-      <div className="title">
+    <Wrapper className="mainPage">
+      <div id="aboutMe" className="title">
         <h2>O mnie</h2>
       </div>
       <div className="aboutMeContainer">
@@ -41,11 +41,12 @@ const AboutPage = () => {
 const Wrapper = styled.div`
   background: var(--galleryBtnBg);
   width: 100vw;
-  /* max-width: 1360px; */
-  min-height: 100vh;
+  max-width: 100vw;
+  /* min-height: 100vh;
   margin: 10vh auto 0;
   position: relative;
-  @media screen and (max-width: 800px) {
+  padding-top: 10vh; */
+  .title {
     padding-top: 10vh;
   }
   .aboutMeContainer {

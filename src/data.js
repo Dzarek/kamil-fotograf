@@ -59,6 +59,11 @@ import headerModa from "./images/header/headerModa.jpg";
 import headerPortfolio from "./images/header/headerPortfolio.jpg";
 import headerRodzinne from "./images/header/headerRodzinne.jpg";
 import headerSlub from "./images/header/headerSlub.jpg";
+import headerCiazaM from "./images/header/headerCiazaM.jpg";
+import headerModaM from "./images/header/headerModaM.jpg";
+import headerPortfolioM from "./images/header/headerPortfolioM.jpg";
+import headerRodzinneM from "./images/header/headerRodzinneM.jpg";
+import headerSlubM from "./images/header/headerSlubM.jpg";
 
 export const gallery = [
   {
@@ -213,6 +218,7 @@ export const headerData = [
   {
     id: 1,
     img: headerCiaza,
+    imgM: headerCiazaM,
     shortTitle: "sesje ciążowe",
     longTitle: "Sesja ciążowa dla Ciebie i Twojego brzuszka",
     category: "ciążowe",
@@ -220,6 +226,7 @@ export const headerData = [
   {
     id: 2,
     img: headerRodzinne,
+    imgM: headerRodzinneM,
     shortTitle: "sesje rodzinne",
     longTitle: "Sesja zdjęciowa z Twoimi najbliższymi",
     category: "rodzinne",
@@ -227,6 +234,7 @@ export const headerData = [
   {
     id: 3,
     img: headerSlub,
+    imgM: headerSlubM,
     shortTitle: "sesje ślubne",
     longTitle: "Romantyczna sesja ślubna",
     category: "ślubne",
@@ -234,6 +242,7 @@ export const headerData = [
   {
     id: 4,
     img: headerPortfolio,
+    imgM: headerPortfolioM,
     shortTitle: "zdjęcia portretowe",
     longTitle: "Zdjęcia do Twojego CV i portfolio",
     category: "portrety",
@@ -241,6 +250,7 @@ export const headerData = [
   {
     id: 5,
     img: headerModa,
+    imgM: headerModaM,
     shortTitle: "sesje mody",
     longTitle: "Pokaż siebie i swój styl",
     category: "moda",

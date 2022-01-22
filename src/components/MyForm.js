@@ -101,7 +101,7 @@ class MyForm extends Component {
             padding: "10px",
             borderRadius: "5px",
           }}
-          expires={0}
+          expires={7}
         >
           Strona korzysta z plików cookies. Pozostając na niej wyrażasz zgodę na
           ich używanie. <br /> Ze szczegółowymi informacjami dotyczącymi cookies

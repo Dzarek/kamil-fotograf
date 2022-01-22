@@ -13,8 +13,8 @@ const ContactPage = () => {
     Aos.init({ duration: 1000 });
   }, []);
   return (
-    <Wrapper className="mainPage" id="contact">
-      <div className="title">
+    <Wrapper className="mainPage">
+      <div id="contact" className="title">
         <h2>Kontakt</h2>
       </div>
       <h3 data-aos="fade-up">
