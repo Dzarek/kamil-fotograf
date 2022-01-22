@@ -105,6 +105,11 @@ const ServicesPage = ({ showDetails, setShowDetails }) => {
 const Wrapper = styled.div`
   padding-bottom: 1vh;
   @media screen and (max-width: 800px) {
+    .title {
+      padding-top: 5vh;
+    }
+  }
+  .title {
     padding-top: 5vh;
   }
   .allOffer {
