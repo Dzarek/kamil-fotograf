@@ -102,7 +102,7 @@ const Wrapper = styled.div`
   width: 100vw;
   height: 100vh;
   @media screen and (max-width: 800px) {
-    height: 100vh;
+    height: 90vh;
   }
   .fbAndInst {
     position: absolute;
@@ -160,7 +160,7 @@ const Wrapper = styled.div`
       right: 5%;
     }
     @media screen and (max-width: 800px) {
-      height: 90vh;
+      height: 80vh;
       width: 100vw;
       top: 0%;
       transform: translateX(-50%);
@@ -178,7 +178,7 @@ const Wrapper = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
     @media screen and (max-width: 800px) {
-      height: 90vh;
+      height: 80vh;
       width: 100vw;
     }
     .headerPartImg {
