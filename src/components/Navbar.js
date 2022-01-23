@@ -116,7 +116,7 @@ const Navbar = () => {
             duration={1000}
             activeClass="active"
             spy={true}
-            // offset={-30}
+            offset={20}
           >
             <IoMdImages />
           </Link>

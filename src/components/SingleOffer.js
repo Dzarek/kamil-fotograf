@@ -76,8 +76,8 @@ const Wrapper = styled.div`
       font-size: 1.5rem;
       font-family: "Kanit", sans-serif;
       color: white;
-      border: 2px solid var(--primaryColor);
-      border-radius: 3px;
+      border: 2px solid white;
+      border-radius: 5px;
       text-shadow: 3px 3px 3px black;
       transition: 0.3s;
       cursor: pointer;
