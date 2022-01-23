@@ -116,7 +116,7 @@ const Navbar = () => {
             duration={1000}
             activeClass="active"
             spy={true}
-            // offset={30}
+            offset={30}
           >
             <IoMdImages />
           </Link>
@@ -126,7 +126,7 @@ const Navbar = () => {
             duration={1000}
             activeClass="active"
             spy={true}
-            // offset={20}
+            offset={30}
           >
             <FaHandshake />
           </Link>
@@ -136,7 +136,7 @@ const Navbar = () => {
             duration={1000}
             activeClass="active"
             spy={true}
-            // offset={40}
+            offset={30}
           >
             <BsFillPersonFill />
           </Link>
@@ -146,7 +146,7 @@ const Navbar = () => {
             duration={1000}
             activeClass="active"
             spy={true}
-            // offset={20}
+            offset={30}
           >
             <MdOutlinePhoneAndroid />
           </Link>
