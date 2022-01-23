@@ -102,7 +102,7 @@ const GalleryPage = () => {
   };
 
   return (
-    <Wrapper id="gallery">
+    <Wrapper id="gallery" className="mainPage">
       <div className="title">
         <h2>Galeria</h2>
       </div>
@@ -163,6 +163,7 @@ const GalleryPage = () => {
 
 const Wrapper = styled.div`
   width: 100vw;
+  max-width: 100vw;
   /* @media screen and (max-width: 800px) {
     padding-top: 5vh;
   } */

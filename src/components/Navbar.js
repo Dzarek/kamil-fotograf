@@ -107,6 +107,7 @@ const Navbar = () => {
             duration={1000}
             activeClass="active"
             spy={true}
+            offset={0}
           >
             <IoHome />
           </Link>
@@ -116,7 +117,7 @@ const Navbar = () => {
             duration={1000}
             activeClass="active"
             spy={true}
-            offset={0}
+            offset={20}
           >
             <IoMdImages />
           </Link>
