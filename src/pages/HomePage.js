@@ -102,7 +102,7 @@ const Wrapper = styled.div`
   width: 100vw;
   height: 100vh;
   @media screen and (max-width: 800px) {
-    height: 90vh;
+    height: 100vh;
   }
   .fbAndInst {
     position: absolute;
