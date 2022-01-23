@@ -167,9 +167,6 @@ const Wrapper = styled.div`
   @media screen and (max-width: 800px) {
     /* margin-top: 5vh; */
     padding-top: 5vh;
-    width: 100vw;
-    max-width: 100vw;
-    min-height: 100vh;
     .title {
       margin-top: -5vh;
     }

@@ -107,7 +107,7 @@ const Navbar = () => {
             duration={1000}
             activeClass="active"
             spy={true}
-            offset={-200}
+            offset={0}
           >
             <IoHome />
           </Link>
@@ -117,7 +117,7 @@ const Navbar = () => {
             duration={1000}
             activeClass="active"
             spy={true}
-            // offset={20}
+            offset={20}
           >
             <IoMdImages />
           </Link>
@@ -280,7 +280,7 @@ const Wrapper2 = styled.div`
   .logo {
     cursor: pointer;
     margin: 0 auto;
-    position: relative;
+    position: absolute;
     height: 10vh;
     width: 100vw;
     top: 0;
