@@ -42,13 +42,7 @@ const Wrapper = styled.div`
   background: var(--galleryBtnBg);
   width: 100vw;
   max-width: 100vw;
-  /* min-height: 100vh;
-  margin: 10vh auto 0;
-  position: relative;
-  padding-top: 10vh; */
-  .title {
-    padding-top: 10vh;
-  }
+
   .aboutMeContainer {
     max-width: 1360px;
     width: 70%;
