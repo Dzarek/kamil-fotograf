@@ -77,7 +77,7 @@ const Wrapper = styled.div`
     /* padding-top: 5vh; */
   }
   h3 {
-    margin: -3vh auto 12vh;
+    margin: 0vh auto 12vh;
     text-align: center;
     font-family: var(--titleFont);
     font-weight: 500;

@@ -31,7 +31,7 @@ const Navbar = () => {
             duration={1000}
             activeClass="active"
             spy={true}
-            offset={-100}
+            offset={-50}
           >
             Galeria
           </Link>
@@ -41,7 +41,7 @@ const Navbar = () => {
             duration={1000}
             activeClass="active"
             spy={true}
-            offset={-100}
+            offset={-50}
           >
             Oferta
           </Link>
@@ -73,7 +73,7 @@ const Navbar = () => {
             duration={1000}
             activeClass="active"
             spy={true}
-            offset={-100}
+            offset={-20}
           >
             Kontakt
           </Link>
