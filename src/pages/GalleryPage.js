@@ -102,8 +102,8 @@ const GalleryPage = () => {
   };
 
   return (
-    <Wrapper>
-      <div id="gallery" className="title">
+    <Wrapper id="gallery">
+      <div className="title">
         <h2>Galeria</h2>
       </div>
       <div data-aos="fade-up" className="galleryCategory">
@@ -198,13 +198,13 @@ const Wrapper = styled.div`
         padding: 10px 5px;
 
         :hover {
-          background: #333;
+          background: var(--logoBgMobile);
         }
       }
     }
     .activeBtn {
       border: 2px solid var(--secondaryColor);
-      background: #333;
+      background: var(--logoBgMobile);
     }
   }
   .galleryContent {

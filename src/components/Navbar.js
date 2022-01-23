@@ -116,7 +116,7 @@ const Navbar = () => {
             duration={1000}
             activeClass="active"
             spy={true}
-            offset={-30}
+            // offset={-30}
           >
             <IoMdImages />
           </Link>
@@ -136,7 +136,7 @@ const Navbar = () => {
             duration={1000}
             activeClass="active"
             spy={true}
-            offset={30}
+            // offset={30}
           >
             <BsFillPersonFill />
           </Link>
@@ -146,7 +146,7 @@ const Navbar = () => {
             duration={1000}
             activeClass="active"
             spy={true}
-            offset={-30}
+            // offset={-30}
           >
             <MdOutlinePhoneAndroid />
           </Link>
@@ -289,7 +289,7 @@ const Wrapper2 = styled.div`
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    background: rgba(0, 0, 0, 0.7);
+    background: var(--logoBgMobile);
   }
   h2 {
     font-family: "Genos", sans-serif;
@@ -299,7 +299,7 @@ const Wrapper2 = styled.div`
     font-size: 1.5rem;
     letter-spacing: 1px;
     margin-left: 0;
-
+    /* color: white1; */
     .logoLine {
       margin: 5px 30px 0;
       height: 1.5rem;

@@ -10,8 +10,8 @@ const AboutPage = () => {
     Aos.init({ duration: 1000 });
   }, []);
   return (
-    <Wrapper className="mainPage">
-      <div id="aboutMe" className="title">
+    <Wrapper id="aboutMe" className="mainPage">
+      <div className="title">
         <h2>O mnie</h2>
       </div>
       <div className="aboutMeContainer">

@@ -31,6 +31,7 @@ body {
   --galleryContentColor: #111;
   /* --galleryBtnBg: #222; */
   --galleryBtnBg: rgb(30, 30, 30);
+  --logoBgMobile: rgba(0, 0, 0, 0.7);
 
   --textFont: "Kanit", sans-serif;
   --titleFont: 'Genos', sans-serif;
@@ -48,6 +49,7 @@ body {
   --navbarBgColor: #fff;
   --galleryContentColor: #ccc;
   --galleryBtnBg: #fff;
+  --logoBgMobile: rgba(255, 255, 255, 0.8);
 
   --textFont: "Kanit", sans-serif;
   --titleFont: 'Genos', sans-serif;
