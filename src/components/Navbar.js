@@ -5,8 +5,7 @@ import { animateScroll as scroll } from "react-scroll";
 
 import { BsFillArrowUpSquareFill } from "react-icons/bs";
 import { IoMdImages } from "react-icons/io";
-// import { FaMoneyBillWave } from "react-icons/fa";
-// import { FaCoins } from "react-icons/fa";
+
 import { FaHandshake } from "react-icons/fa";
 import { BsFillPersonFill } from "react-icons/bs";
 import { MdOutlinePhoneAndroid } from "react-icons/md";
@@ -20,6 +19,11 @@ const Navbar = () => {
       setOffset(window.pageYOffset);
     };
   }, []);
+  const handleScroll = () => {
+    setTimeout(() => {
+      scroll.scrollMore(10);
+    }, 1100);
+  };
 
   return (
     <>
@@ -118,7 +122,7 @@ const Navbar = () => {
             activeClass="active"
             spy={true}
             offset={10}
-            onClick={() => scroll.scrollMore(10)}
+            onClick={handleScroll}
           >
             <IoMdImages />
           </Link>
@@ -129,7 +133,7 @@ const Navbar = () => {
             activeClass="active"
             spy={true}
             offset={30}
-            onClick={() => scroll.scrollMore(10)}
+            onClick={handleScroll}
           >
             <FaHandshake />
           </Link>
@@ -140,7 +144,7 @@ const Navbar = () => {
             activeClass="active"
             spy={true}
             offset={30}
-            onClick={() => scroll.scrollMore(10)}
+            onClick={handleScroll}
           >
             <BsFillPersonFill />
           </Link>
@@ -151,7 +155,7 @@ const Navbar = () => {
             activeClass="active"
             spy={true}
             offset={30}
-            onClick={() => scroll.scrollMore(10)}
+            onClick={handleScroll}
           >
             <MdOutlinePhoneAndroid />
           </Link>
@@ -375,9 +379,6 @@ const Wrapper2 = styled.div`
       &.active {
         color: var(--secondaryColor);
       }
-      /* :active {
-        color: var(--secondaryColor);
-      } */
     }
   }
   .navbarBg {
