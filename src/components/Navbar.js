@@ -117,7 +117,7 @@ const Navbar = () => {
             duration={1000}
             activeClass="active"
             spy={true}
-            offset={20}
+            offset={0}
           >
             <IoMdImages />
           </Link>
@@ -366,7 +366,11 @@ const Wrapper2 = styled.div`
       cursor: pointer;
       display: flex;
       align-items: center;
+      user-select: none;
       &.active {
+        color: var(--secondaryColor);
+      }
+      :hover {
         color: var(--secondaryColor);
       }
     }

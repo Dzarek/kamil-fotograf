@@ -121,8 +121,8 @@ body {
   width: 90vw;
   max-width: 1360px;
   min-height: 100vh;
-  margin: 5vh auto;
-  /* padding-top: 10vh; */
+  margin: 0vh auto;
+  padding-top: 10vh;
   position: relative;
 }
 
@@ -136,7 +136,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 10vh;
+  /* padding-top: 5vh; */
 }
 
 .title h2 {
