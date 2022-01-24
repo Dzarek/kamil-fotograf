@@ -117,7 +117,8 @@ const Navbar = () => {
             duration={1000}
             activeClass="active"
             spy={true}
-            offset={0}
+            offset={10}
+            onClick={() => scroll.scrollMore(10)}
           >
             <IoMdImages />
           </Link>
@@ -128,6 +129,7 @@ const Navbar = () => {
             activeClass="active"
             spy={true}
             offset={30}
+            onClick={() => scroll.scrollMore(10)}
           >
             <FaHandshake />
           </Link>
@@ -138,6 +140,7 @@ const Navbar = () => {
             activeClass="active"
             spy={true}
             offset={30}
+            onClick={() => scroll.scrollMore(10)}
           >
             <BsFillPersonFill />
           </Link>
@@ -148,6 +151,7 @@ const Navbar = () => {
             activeClass="active"
             spy={true}
             offset={30}
+            onClick={() => scroll.scrollMore(10)}
           >
             <MdOutlinePhoneAndroid />
           </Link>
@@ -367,12 +371,13 @@ const Wrapper2 = styled.div`
       display: flex;
       align-items: center;
       user-select: none;
+
       &.active {
         color: var(--secondaryColor);
       }
-      :hover {
+      /* :active {
         color: var(--secondaryColor);
-      }
+      } */
     }
   }
   .navbarBg {
