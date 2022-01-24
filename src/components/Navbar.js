@@ -21,7 +21,7 @@ const Navbar = () => {
   }, []);
   const handleScroll = () => {
     setTimeout(() => {
-      scroll.scrollMore(10);
+      scroll.scrollMore(5);
     }, 1100);
   };
 
