@@ -21,7 +21,7 @@ const Navbar = () => {
   }, []);
   const handleScroll = () => {
     setTimeout(() => {
-      scroll.scrollMore(5);
+      scroll.scrollMore(1);
     }, 1100);
   };
 
@@ -285,6 +285,7 @@ const Wrapper2 = styled.div`
   @media screen and (min-width: 801px) {
     display: none;
   }
+
   .logo {
     cursor: pointer;
     margin: 0 auto;
@@ -364,6 +365,7 @@ const Wrapper2 = styled.div`
     justify-content: space-evenly;
     align-items: center;
     z-index: 9999;
+
     h5,
     a {
       font-weight: 600;
